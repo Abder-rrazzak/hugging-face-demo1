@@ -2,7 +2,7 @@ import torch
 from transformers import pipeline
 import gradio as gr
 
-model = pipeline("summarization")
+model = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", framework="pt")
 
 def predict(prompt):
     summary = model(prompt)[0]["summary_text"]
